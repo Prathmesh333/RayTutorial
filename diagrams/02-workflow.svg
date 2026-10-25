@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000">
+<rect width="1800" height="1000" fill="#101b2b"/>
+<text x="80" y="112" font-family="Arial,sans-serif" font-size="52" fill="white" text-anchor="start">One small model, two inference paths</text>
+<text x="80" y="172" font-family="Arial,sans-serif" font-size="27" fill="#c7d7e8" text-anchor="start">The companion learns y = 3x + 2 from 1,024 synthetic rows.</text>
+<rect x="80" y="280" width="350" height="150" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="255.0" y="347.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Ray Data</text>
+<text x="255.0" y="392.6666666666667" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Create + preprocess</text>
+<rect x="660" y="280" width="470" height="150" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="895.0" y="347.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Ray Train + PyTorch</text>
+<text x="895.0" y="392.6666666666667" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Shards -&gt; synchronized training</text>
+<rect x="1350" y="280" width="370" height="150" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="1535.0" y="347.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Checkpoint store</text>
+<text x="1535.0" y="392.6666666666667" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Model + optimizer + epoch</text>
+<rect x="280" y="620" width="480" height="150" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="520.0" y="687.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Ray Data actors</text>
+<text x="520.0" y="732.6666666666666" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Offline batch predictions</text>
+<rect x="1080" y="620" width="480" height="150" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="1320.0" y="687.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Ray Serve replica</text>
+<text x="1320.0" y="732.6666666666666" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">HTTP predictions</text>
+<line x1="430" y1="355" x2="660" y2="355" stroke="#50d6bd" stroke-width="4"/>
+<polygon points="660,355 643.4209021079481,362.0095301615557 643.4209021079481,347.9904698384443" fill="#50d6bd"/>
+<text x="545.0" y="335.0" font-family="Arial,sans-serif" font-size="24" fill="#50d6bd" text-anchor="middle">Batches</text>
+<line x1="1130" y1="355" x2="1350" y2="355" stroke="#50d6bd" stroke-width="4"/>
+<polygon points="1350,355 1333.420902107948,362.0095301615557 1333.420902107948,347.9904698384443" fill="#50d6bd"/>
+<text x="1240.0" y="335.0" font-family="Arial,sans-serif" font-size="24" fill="#50d6bd" text-anchor="middle">Save</text>
+<line x1="1430" y1="430" x2="520" y2="620" stroke="#50d6bd" stroke-width="4"/>
+<polygon points="520,620 534.7964925276393,609.7499361524177 537.6617613519837,623.4730657848039" fill="#50d6bd"/>
+<text x="975.0" y="505.0" font-family="Arial,sans-serif" font-size="24" fill="#50d6bd" text-anchor="middle">Load weights</text>
+<line x1="1560" y1="430" x2="1320" y2="620" stroke="#50d6bd" stroke-width="4"/>
+<polygon points="1320,620 1328.6479364657093,604.213512268872 1337.349608485503,615.2050979780851" fill="#50d6bd"/>
+<text x="1440.0" y="505.0" font-family="Arial,sans-serif" font-size="24" fill="#50d6bd" text-anchor="middle">Load weights</text>
+<text x="80" y="877" font-family="Arial,sans-serif" font-size="27" fill="#c7d7e8" text-anchor="start">Single-machine demo: local checkpoint directory. Multi-node jobs: shared durable storage.</text>
+<text x="80" y="927" font-family="Arial,sans-serif" font-size="27" fill="#c7d7e8" text-anchor="start">Tune runs separate model trials; selecting a trial is separate from distributed training.</text>
+</svg>

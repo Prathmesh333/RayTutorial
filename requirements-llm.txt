@@ -1,0 +1,4 @@
+# Separate Linux GPU environment. Do not combine with requirements.txt.
+# vLLM selects its own compatible Torch/CUDA dependency stack.
+ray[llm]==2.59.0
+vllm==0.27.0

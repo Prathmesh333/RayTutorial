@@ -1,0 +1,6 @@
+ray[data,train,tune,serve]==2.59.0
+torch==2.9.0
+numpy==2.2.6
+pandas==2.3.3
+pyarrow==21.0.0
+protobuf==7.36.2

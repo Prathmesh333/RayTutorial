@@ -1,0 +1,12 @@
+[
+  {
+    "script": "data_pipeline.py",
+    "exit_code": 0,
+    "seconds": 17.22
+  },
+  {
+    "script": "train_regression.py",
+    "exit_code": 1,
+    "seconds": 44.47
+  }
+]

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000">
+<rect width="1800" height="1000" fill="#101b2b"/>
+<text x="80" y="112" font-family="Arial,sans-serif" font-size="52" fill="white" text-anchor="start">One cluster, several machines</text>
+<text x="80" y="172" font-family="Arial,sans-serif" font-size="27" fill="#c7d7e8" text-anchor="start">Conceptual control and data paths; resource counts are illustrative.</text>
+<rect x="80" y="260" width="400" height="170" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="280.0" y="337.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Driver / job</text>
+<text x="280.0" y="382.6666666666667" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Submits tasks and actors</text>
+<rect x="700" y="260" width="410" height="170" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="905.0" y="337.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Head node</text>
+<text x="905.0" y="382.6666666666667" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">GCS + cluster services</text>
+<rect x="80" y="560" width="600" height="170" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="380.0" y="637.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Worker node A</text>
+<text x="380.0" y="682.6666666666666" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Raylet + object store + CPU workers</text>
+<rect x="1000" y="560" width="650" height="170" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="1325.0" y="637.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Worker node B</text>
+<text x="1325.0" y="682.6666666666666" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Raylet + object store + GPU workers</text>
+<line x1="480" y1="345" x2="700" y2="345" stroke="#50d6bd" stroke-width="4"/>
+<polygon points="700,345 683.4209021079481,352.0095301615557 683.4209021079481,337.9904698384443" fill="#50d6bd"/>
+<text x="590.0" y="325.0" font-family="Arial,sans-serif" font-size="24" fill="#50d6bd" text-anchor="middle">Submit</text>
+<line x1="905" y1="430" x2="380" y2="560" stroke="#50d6bd" stroke-width="4"/>
+<polygon points="380,560 394.40825340929837,549.2110133147991 397.77787213349507,562.8190889317473" fill="#50d6bd"/>
+<text x="642.5" y="475.0" font-family="Arial,sans-serif" font-size="24" fill="#50d6bd" text-anchor="middle">Coordinate</text>
+<line x1="905" y1="430" x2="1325" y2="560" stroke="#50d6bd" stroke-width="4"/>
+<polygon points="1325,560 1307.0896176931362,561.7939357909314 1311.234825713528,548.4017252635123" fill="#50d6bd"/>
+<text x="1115.0" y="475.0" font-family="Arial,sans-serif" font-size="24" fill="#50d6bd" text-anchor="middle">Coordinate</text>
+<line x1="680" y1="645" x2="1000" y2="645" stroke="#50d6bd" stroke-width="4"/>
+<polygon points="1000,645 983.4209021079481,652.0095301615557 983.4209021079481,637.9904698384443" fill="#50d6bd"/>
+<text x="840.0" y="625.0" font-family="Arial,sans-serif" font-size="24" fill="#50d6bd" text-anchor="middle">Object transfer</text>
+<text x="80" y="877" font-family="Arial,sans-serif" font-size="27" fill="#c7d7e8" text-anchor="start">Raylets schedule work locally and coordinate placement across nodes.</text>
+<text x="80" y="927" font-family="Arial,sans-serif" font-size="27" fill="#c7d7e8" text-anchor="start">PyTorch or an inference engine performs tensor communication; Ray schedules the workers.</text>
+</svg>

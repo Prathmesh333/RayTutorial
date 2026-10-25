@@ -1,0 +1,121 @@
+[
+  {
+    "url": "https://docs.pytorch.org/docs/2.9/distributed.fsdp.fully_shard.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/cluster/key-concepts.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/cluster/vms/user-guides/configuring-autoscaling.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/cluster/vms/user-guides/launching-clusters/on-premises.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/data/batch_inference.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/ray-core/objects.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/ray-core/patterns/ray-get-loop.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/ray-core/scheduling/resources.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/ray-observability/getting-started.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/ray-overview/installation.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/ray-overview/use-cases.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/ray-security/token-auth.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/rllib/index.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/serve/",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/train/user-guides/checkpoints.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/train/user-guides/data-loading-preprocessing.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/train/user-guides/fault-tolerance.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/tune/getting-started.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://docs.vllm.ai/en/latest/serving/distributed_serving.html",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+  },
+  {
+    "url": "https://github.com/ray-project/ray/blob/ray-2.59.0/doc/source/serve/llm/user-guides/cross-node-parallelism.md",
+    "status": 200,
+    "resolved_url": "https://github.com/ray-project/ray/blob/ray-2.59.0/doc/source/serve/llm/user-guides/cross-node-parallelism.md"
+  },
+  {
+    "url": "https://github.com/ray-project/ray/blob/ray-2.59.0/doc/source/train/deepspeed.rst",
+    "status": 200,
+    "resolved_url": "https://github.com/ray-project/ray/blob/ray-2.59.0/doc/source/train/deepspeed.rst"
+  },
+  {
+    "url": "https://github.com/ray-project/ray/blob/ray-2.59.0/doc/source/train/getting-started-pytorch.rst",
+    "status": 200,
+    "resolved_url": "https://github.com/ray-project/ray/blob/ray-2.59.0/doc/source/train/getting-started-pytorch.rst"
+  },
+  {
+    "url": "https://github.com/ray-project/ray/releases/tag/ray-2.59.0",
+    "status": 200,
+    "resolved_url": "https://github.com/ray-project/ray/releases/tag/ray-2.59.0"
+  },
+  {
+    "url": "https://openai.com/index/techniques-for-training-large-neural-networks/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://pypi.org/project/ray/2.59.0/",
+    "status": 200,
+    "resolved_url": "https://pypi.org/project/ray/2.59.0/"
+  },
+  {
+    "url": "https://shopify.engineering/shopifys-machine-learning-platform-real-time-predictions",
+    "status": 200,
+    "resolved_url": "https://shopify.engineering/shopifys-machine-learning-platform-real-time-predictions"
+  },
+  {
+    "url": "https://www.anyscale.com/blog/ray-summit-2022-stories-large-language-models",
+    "status": 200,
+    "resolved_url": "https://www.anyscale.com/blog/ray-summit-2022-stories-large-language-models"
+  },
+  {
+    "url": "https://www.uber.com/in/en/blog/how-uber-uses-ray-to-optimize-the-rides-business/",
+    "error": "HTTP Error 406: Not Acceptable"
+  }
+]

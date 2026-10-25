@@ -1,0 +1,17 @@
+[
+  {
+    "script": "local_baseline.py",
+    "exit_code": 0,
+    "seconds": 5.94
+  },
+  {
+    "script": "tune_regression.py",
+    "exit_code": 0,
+    "seconds": 29.34
+  },
+  {
+    "script": "batch_inference.py",
+    "exit_code": 0,
+    "seconds": 25.7
+  }
+]

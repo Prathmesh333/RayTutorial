@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000">
+<rect width="1800" height="1000" fill="#101b2b"/>
+<text x="80" y="112" font-family="Arial,sans-serif" font-size="52" fill="white" text-anchor="start">Data parallelism and model sharding</text>
+<text x="80" y="172" font-family="Arial,sans-serif" font-size="27" fill="#c7d7e8" text-anchor="start">Adding workers does not automatically reduce the model state required on each GPU.</text>
+<rect x="80" y="270" width="720" height="110" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="440.0" y="317.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Replicated data parallelism</text>
+<text x="440.0" y="362.6666666666667" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Each GPU holds a full model copy</text>
+<rect x="1000" y="270" width="720" height="110" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="1360.0" y="317.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">Fully sharded data parallelism</text>
+<text x="1360.0" y="362.6666666666667" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Persistent model state is partitioned</text>
+<rect x="100" y="490" width="300" height="180" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="250.0" y="572.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">GPU 0</text>
+<text x="250.0" y="617.6666666666666" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Full model; batch A</text>
+<rect x="480" y="490" width="300" height="180" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="630.0" y="572.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">GPU 1</text>
+<text x="630.0" y="617.6666666666666" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">Full model; batch B</text>
+<rect x="1020" y="490" width="300" height="180" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="1170.0" y="572.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">GPU 0</text>
+<text x="1170.0" y="617.6666666666666" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">State shard A</text>
+<rect x="1400" y="490" width="300" height="180" rx="18" fill="#1b3550" stroke="#6585a7" stroke-width="3"/>
+<text x="1550.0" y="572.0" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle">GPU 1</text>
+<text x="1550.0" y="617.6666666666666" font-family="Arial,sans-serif" font-size="23" fill="#c7d7e8" text-anchor="middle">State shard B</text>
+<line x1="400" y1="580" x2="480" y2="580" stroke="#50d6bd" stroke-width="4"/>
+<polygon points="480,580 463.42090210794805,587.0095301615557 463.42090210794805,572.9904698384443" fill="#50d6bd"/>
+<line x1="1320" y1="580" x2="1400" y2="580" stroke="#50d6bd" stroke-width="4"/>
+<polygon points="1400,580 1383.420902107948,587.0095301615557 1383.420902107948,572.9904698384443" fill="#50d6bd"/>
+<text x="80" y="877" font-family="Arial,sans-serif" font-size="27" fill="#c7d7e8" text-anchor="start">DDP synchronizes gradients. FSDP gathers parameters as needed and synchronizes shards.</text>
+<text x="80" y="927" font-family="Arial,sans-serif" font-size="27" fill="#c7d7e8" text-anchor="start">Tensor parallelism partitions operations. Pipeline parallelism partitions sequences of layers.</text>
+</svg>
