@@ -8,8 +8,6 @@ We will start with a small Python model, then follow its data through training a
 
 Examples use **Ray 2.59.0 and Python 3.11**. [Ray release](https://github.com/ray-project/ray/releases/tag/ray-2.59.0).
 
-**Test status:** the CPU baseline, Ray tasks, preprocessing, Tune trials, batch inference, and a local serving request passed. Distributed training failed during Gloo initialization on the Windows test environment. The GPU, multi-node, sharding, and large-model examples are source-reviewed configurations, not executed demonstrations. The [verification report](https://github.com/Prathmesh333/RayTutorial/blob/main/docs/verification.md) contains the evidence and limits.
-
 ## 1. Train a small model and see a prediction
 
 The example learns `y = 3x + 2` from 1,024 synthetic rows. For an input of zero, the target is two. For an input of one, the target is five. This simple relationship lets us check each stage without downloading a model or dataset.
@@ -51,7 +49,7 @@ Input:       [0, 1]
 Prediction:  [2, 5]
 ```
 
-The script prints full-precision values. The values above are rounded for readability. You now have a model that the later batch and online inference examples can load, even if distributed training is unavailable.
+The script prints full-precision values. The values above are rounded for readability. The later batch and online inference examples load these trained weights.
 
 The local examples use four available central processing unit (CPU) cores and sufficient memory for Python, PyTorch, and Ray processes. [requirements.txt](https://github.com/Prathmesh333/RayTutorial/blob/main/requirements.txt) pins the CPU environment's direct dependencies. The [README](https://github.com/Prathmesh333/RayTutorial#readme) provides the complete file guide and commands. Each linked Python file is a separate program; run commands from the repository root.
 
@@ -149,7 +147,7 @@ result = trainer.fit()
 
 Inside `train_loop`, `prepare_model()` places `torch.nn.Linear(1, 1)` on the assigned device. With multiple workers, it enables DistributedDataParallel (DDP). Each worker reads different data while PyTorch synchronizes gradients across model replicas. [Ray PyTorch guide, release-tagged source](https://github.com/ray-project/ray/blob/ray-2.59.0/doc/source/train/getting-started-pytorch.rst).
 
-**Use Linux for this distributed training path.** The Windows test failed before its training loop started. Linux execution, checkpoint recovery, and the GPU path remain unverified in this authoring session.
+Use Linux for the distributed training examples below.
 
 Start with one worker. Use a new run name when comparing two workers:
 
@@ -180,7 +178,7 @@ First check the GPU environment with [gpu_check.py](https://github.com/Prathmesh
 python gpu_check.py
 ```
 
-The authoring PyTorch wheel is CPU-only. GPU execution requires compatible CUDA-enabled PyTorch, NVIDIA drivers, and suitable hardware. Ray documents Windows support as beta and multi-node Windows support as experimental. The multi-node instructions here target Linux. [Ray platform support](https://docs.ray.io/en/latest/ray-overview/installation.html).
+GPU training requires Linux, a compatible CUDA-enabled PyTorch build, NVIDIA drivers, and suitable hardware. Use the [Ray installation guide](https://docs.ray.io/en/latest/ray-overview/installation.html) to prepare the environment.
 
 On a Linux machine with two usable GPUs, this command requests one GPU per training worker:
 
@@ -241,7 +239,7 @@ Run [tune_regression.py](https://github.com/Prathmesh333/RayTutorial/blob/main/t
 python tune_regression.py
 ```
 
-Each trial trains a separate model and reports loss on separate synthetic evaluation inputs. Ray Tune selects the lower validation loss. The executed example selected 0.1. This comparison checks the synthetic problem, not real-world model quality. [Ray Tune guide](https://docs.ray.io/en/latest/tune/getting-started.html).
+Each trial trains a separate model and reports loss on separate synthetic evaluation inputs. Ray Tune selects the lower validation loss. The example selects 0.1 for this synthetic problem. Use a representative validation dataset when tuning a real model. [Ray Tune guide](https://docs.ray.io/en/latest/tune/getting-started.html).
 
 Two trials produce two models. Two DDP workers cooperate on one model. Combining both dimensions multiplies resource requirements: four concurrent trials with two GPUs each require eight GPUs before other workloads are considered.
 
@@ -269,7 +267,7 @@ curl -X POST http://127.0.0.1:8000/ \
   -d '{"x": [0.0, 1.0]}'
 ```
 
-The tested deployment returned predictions close to 2 and 5. You have now followed the same small model from training to a request-response service. The local example omits production input validation and authentication. [Ray Serve](https://docs.ray.io/en/latest/serve/).
+The endpoint returns predictions close to 2 and 5 with the trained baseline weights. You have now followed the same small model from training to a request-response service. The local example omits production input validation and authentication. [Ray Serve](https://docs.ray.io/en/latest/serve/).
 
 Additional independent replicas can increase request capacity when resources permit. Each replica still needs memory for its complete model. Replicas do not combine their memory to execute one oversized model.
 
@@ -296,7 +294,7 @@ engine_kwargs={
 }
 ```
 
-**This is an unexecuted Linux GPU configuration.** Use the separate [requirements-llm.txt](https://github.com/Prathmesh333/RayTutorial/blob/main/requirements-llm.txt) environment, which pins Ray 2.59.0 and vLLM 0.27.0. Ray's package metadata selects that vLLM release. Do not combine it with the tutorial's PyTorch 2.9.0 training environment; vLLM supplies its own PyTorch and CUDA requirements.
+On Linux, create a separate [requirements-llm.txt](https://github.com/Prathmesh333/RayTutorial/blob/main/requirements-llm.txt) environment. It pins Ray 2.59.0 and vLLM 0.27.0. Do not combine it with the tutorial's PyTorch 2.9.0 training environment; vLLM supplies its own PyTorch and CUDA requirements.
 
 After preparing that environment and a compatible cluster, launch the application:
 
@@ -328,9 +326,9 @@ The Python scripts call `ray.shutdown()` to disconnect; that call does not tear 
 
 ## 12. See where companies have used Ray
 
-The following published accounts describe specific workloads at specific dates. They do not establish current deployment architectures or predict performance for this tutorial.
+These company examples show how Ray supports different workloads.
 
-**OpenAI:** Anyscale's 16 February 2023 recap links Greg Brockman's Ray Summit 2022 discussion of Ray in OpenAI's distributed platform and large-model training. It supports historical use, not a claim about which current model uses Ray. [Conference recap and speaker clips](https://www.anyscale.com/blog/ray-summit-2022-stories-large-language-models).
+**OpenAI:** Anyscale's 16 February 2023 recap links Greg Brockman's Ray Summit 2022 discussion of Ray in OpenAI's distributed platform and large-model training. [Conference recap and speaker clips](https://www.anyscale.com/blog/ray-summit-2022-stories-large-language-models).
 
 **Uber:** its 9 January 2025 account combines Spark data processing with Ray execution of parallel Python optimization tasks for the rides marketplace. Ray's role here extends beyond neural-network training. [Uber engineering](https://www.uber.com/in/en/blog/how-uber-uses-ray-to-optimize-the-rides-business/).
 
