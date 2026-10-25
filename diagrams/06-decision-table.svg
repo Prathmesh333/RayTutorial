@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1340" viewBox="0 0 1800 1340">
+<rect width="1800" height="1340" fill="#101b2b"/>
+<text x="70" y="98" font-family="Arial,sans-serif" font-size="48" fill="white">Choose parallelism from the limiting resource</text>
+<rect x="60" y="170" width="1680" height="100" fill="#244761"/>
+<text x="80" y="222" font-family="Arial,sans-serif" font-size="32" fill="#50d6bd">Observed problem</text>
+<text x="650" y="222" font-family="Arial,sans-serif" font-size="32" fill="#50d6bd">Approach to evaluate</text>
+<text x="1200" y="222" font-family="Arial,sans-serif" font-size="32" fill="#50d6bd">Condition to check</text>
+<rect x="60" y="270" width="1680" height="190" fill="#1b2c42"/>
+<text x="80" y="322" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Training is slow; model fits</text>
+<text x="650" y="322" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Data-parallel workers</text>
+<text x="1200" y="322" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Input throughput and</text>
+<text x="1200" y="364" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">communication cost</text>
+<rect x="60" y="460" width="1680" height="190" fill="#152438"/>
+<text x="80" y="512" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Training state exceeds device</text>
+<text x="80" y="554" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">memory</text>
+<text x="650" y="512" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">FSDP or another sharding strategy</text>
+<text x="1200" y="512" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Peak gathers, activations, and</text>
+<text x="1200" y="554" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">checkpoints</text>
+<rect x="60" y="650" width="1680" height="190" fill="#1b2c42"/>
+<text x="80" y="702" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Requests exceed one replica&#x27;s</text>
+<text x="80" y="744" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">capacity</text>
+<text x="650" y="702" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">More independent replicas</text>
+<text x="1200" y="702" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">A complete model fits each replica</text>
+<rect x="60" y="840" width="1680" height="190" fill="#152438"/>
+<text x="80" y="892" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">One inference model exceeds</text>
+<text x="80" y="934" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">device or machine memory</text>
+<text x="650" y="892" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Tensor or pipeline parallelism</text>
+<text x="1200" y="892" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Engine support, placement, and</text>
+<text x="1200" y="934" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">interconnect</text>
+<rect x="60" y="1030" width="1680" height="190" fill="#1b2c42"/>
+<text x="80" y="1082" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Independent experiments take too</text>
+<text x="80" y="1124" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">long</text>
+<text x="650" y="1082" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Concurrent Tune trials</text>
+<text x="1200" y="1082" font-family="Arial,sans-serif" font-size="32" fill="#e5edf5">Resources for every concurrent trial</text>
+<text x="70" y="1292" font-family="Arial,sans-serif" font-size="27" fill="#bbcede">Choose a candidate approach, then validate memory, correctness, and performance on your workload.</text>
+</svg>

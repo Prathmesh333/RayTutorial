@@ -125,4 +125,4 @@ Stop the foreground Serve command with Ctrl+C. Use `serve shutdown` to remove ap
 
 ## Diagram sources
 
-Each PNG has an editable SVG sibling in diagrams. tools/make_diagrams.py reproduces both. Rendering needs Pillow; the authoring renderer used Pillow 11.0.0. Adjust FONT if your system uses another font location. This dependency is separate from Ray execution.
+Each PNG has an editable SVG sibling in diagrams. tools/make_diagrams.py reproduces the four architecture diagrams. tools/make_tables.py reproduces the memory and decision tables for Medium. The GitHub article retains searchable Markdown tables. Rendering needs Pillow; the authoring renderer used Pillow 11.0.0. Adjust FONT if your system uses another font location. This dependency is separate from Ray execution.

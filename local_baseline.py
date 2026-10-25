@@ -18,7 +18,9 @@ if __name__ == "__main__":
             optimizer.step()
     with torch.inference_mode():
         mse = torch.nn.functional.mse_loss(model(x), y).item()
+        predictions = model(torch.tensor([[0.0], [1.0]])).reshape(-1).tolist()
     assert mse < 0.05
     Path("artifacts").mkdir(exist_ok=True)
     torch.save(model.state_dict(), "artifacts/model.pt")
     print({"mse": mse, "weights": model.weight.item(), "bias": model.bias.item()})
+    print({"input": [0.0, 1.0], "prediction": predictions})

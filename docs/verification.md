@@ -6,7 +6,7 @@ Date: 25 October 2026. This report distinguishes execution evidence from source 
 
 CPython 3.11.3 on Windows. Ray 2.59.0. PyTorch 2.9.0+cpu. Ray detects a local NVIDIA GPU, but this PyTorch wheel has no CUDA support. No usable CUDA execution environment or second machine was available. The existing Ubuntu WSL registration could not start because its virtual disk path was missing; no system repair or installation was attempted.
 
-GitHub's latest-release API returned ray-2.59.0, published 2 October 2026, prerelease=false. PyPI returned 2.59.0. Version verification date is explicit in the article. The pinned CPU environment passed `pip check`. The complete authoring dependency snapshot is included separately.
+GitHub's latest-release API returned ray-2.59.0, published 2 October 2026, prerelease=false. PyPI returned 2.59.0. The article gives the pinned version; this report records the verification date. The pinned CPU environment passed `pip check`. The complete authoring dependency snapshot is included separately.
 
 ## Executed successfully
 
@@ -64,3 +64,12 @@ sources.md maps claims to primary documents. Some official web pages returned ra
 ## Publication limits
 
 The Medium draft remains unpublished. Complete companion files are hosted in this repository and linked from the article. GPU configuration validation, Linux DDP execution, and recovery testing remain necessary before presenting those paths as tested recipes.
+
+
+## Readability revision
+
+Applied the controlled-technical-english skill baseline to the mixed tutorial and descriptive text. Kept project API names, numerical assumptions, citations, prerequisites, recovery limits, and unexecuted GPU status. No external controlled-language certification is claimed.
+
+The article now begins with the baseline prediction, introduces each file at its point of use, explains the trainer excerpt, and compares scaling choices in tables. The full file guide remains in the README. Medium uses image versions of the two tables and explicit Python, Bash, or Plain Text code languages.
+
+The baseline now prints predictions for inputs 0 and 1. A fresh CPU run returned [2.000002384185791, 5.0], with MSE 7.91001986133466e-12. The additional print statement does not change training. Distributed training, GPU, recovery, and large-model execution status remain unchanged.
