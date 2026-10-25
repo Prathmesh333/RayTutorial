@@ -38,6 +38,10 @@ cd RayTutorial
 
 The [README](https://github.com/Prathmesh333/RayTutorial#readme) gives each program's purpose, prerequisites, run command, and expected behavior. The [verification report](https://github.com/Prathmesh333/RayTutorial/blob/main/docs/verification.md) separates executed examples from source-reviewed configurations.
 
+CPU walkthrough: [local_baseline.py](https://github.com/Prathmesh333/RayTutorial/blob/main/local_baseline.py), [core_tasks.py](https://github.com/Prathmesh333/RayTutorial/blob/main/core_tasks.py), [data_pipeline.py](https://github.com/Prathmesh333/RayTutorial/blob/main/data_pipeline.py), [tune_regression.py](https://github.com/Prathmesh333/RayTutorial/blob/main/tune_regression.py), [batch_inference.py](https://github.com/Prathmesh333/RayTutorial/blob/main/batch_inference.py), and [serve_regression.py](https://github.com/Prathmesh333/RayTutorial/blob/main/serve_regression.py).
+
+Distributed examples: [gpu_check.py](https://github.com/Prathmesh333/RayTutorial/blob/main/gpu_check.py), [train_regression.py](https://github.com/Prathmesh333/RayTutorial/blob/main/train_regression.py), [train_fsdp.py](https://github.com/Prathmesh333/RayTutorial/blob/main/train_fsdp.py), and [serve_llm.py](https://github.com/Prathmesh333/RayTutorial/blob/main/serve_llm.py). Check their hardware requirements and execution status before running them.
+
 **Execution status:** the plain PyTorch baseline, Ray task and actor checks, data preprocessing, Tune trials, batch inference, and a local Ray Serve HTTP request passed. Ray Train's two-worker test failed during Gloo initialization on the native Windows authoring environment. Its training loop and recovery path were therefore not executed successfully. GPU, FSDP2, multi-node training, and large-model serving configurations were reviewed against versioned sources but not executed. No large-model fit, speedup, or latency result is claimed.
 
 ## 1. Understand the boundary between Ray and the model framework
@@ -284,3 +288,4 @@ For cleanup, stop the foreground `serve run` command. Run `serve shutdown` to re
 Other applications include distributed simulation, reinforcement learning with RLlib, feature processing, model evaluation, embeddings, and independent experiment execution. The useful primitive is the same: explicit units of work, declared resources, and controlled data movement. [Ray use cases](https://docs.ray.io/en/latest/ray-overview/use-cases.html), [RLlib](https://docs.ray.io/en/latest/rllib/index.html).
 
 Start with the small workload and identify the limiting resource. Add data-parallel workers when the model fits and training throughput is the problem. Use an explicit sharding strategy when model state exceeds device memory. For serving, decide whether you need more independent replicas or one model distributed across devices. That decision determines the architecture before a GPU count does.
+
